@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - Доставка бизнес-ланчей в Москве</title>
+    
+    <!-- Google Fonts (Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333333;
+            background-color: #f5f0e6;
+            line-height: 1.6;
+            font-size: 20px;
+        }
+
+        /* ===== Шапка (header) ===== */
+        header {
+            background-color: #ede4d3;
+            padding: 20px 40px;
+            margin: 0 auto;
+            max-width: 1200px;
+            border-bottom: 2px solid #d4c5b0;
+            border-radius: 0 0 8px 8px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #4a3520;
+            letter-spacing: -0.5px;
+            display: inline-block;
+            padding-bottom: 12px;
+            border-bottom: 4px solid #b85c38;
+        }
+
+        /* ===== Навигация (nav) ===== */
+        nav {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #5c4a35;
+            font-weight: 500;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            padding-bottom: 3px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: #b85c38;
+            border-bottom: 2px solid #b85c38;
+        }
+
+        /* ===== Основной контент (main) ===== */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
+        }
+
+        /* ===== Секции (section) ===== */
+        section {
+            margin-bottom: 40px;
+            background-color: #fbf7f0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(74, 53, 32, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #4a3520;
+            letter-spacing: -0.3px;
+            display: inline-block;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #b85c38;
+        }
+
+        /* ===== Изображение ===== */
+        img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 4px 12px rgba(74, 53, 32, 0.15);
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #5c4a35;
+        }
+
+        /* ===== Списки (ul) ===== */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 10px;
+            text-align: left;
+            display: inline-block;
+        }
+
+        ul li {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #5c4a35;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "✓";
+            color: #b85c38;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* ===== Таблица (table) ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+        }
+
+        th, td {
+            padding: 15px 18px;
+            border: 1px solid #d4c5b0;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ede4d3;
+            font-weight: 700;
+            color: #4a3520;
+            font-size: 20px;
+        }
+
+        td {
+            background-color: #ffffff;
+            color: #5c4a35;
+            font-size: 20px;
+        }
+
+        th:nth-child(1), td:nth-child(1),
+        th:nth-child(3), td:nth-child(3),
+        th:nth-child(4), td:nth-child(4) {
+            text-align: center;
+        }
+
+        /* ===== Футер (footer) ===== */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 30px 40px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        footer a {
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f1c40f;
+        }
+
+        /* ===== Адаптивность ===== */
+        @media (max-width: 768px) {
+            header, main, footer {
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 18px;
+            }
+
+            p, ul li, table, th, td {
+                font-size: 16px;
+            }
+
+            th, td {
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Шапка сайта ===== -->
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#lunch">Собрать ланч</a>
+            <a href="#orders">Заказы</a>
+            <a href="feedback.html" target="_blank" rel="noopener noreferrer">Обратная связь</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Food Construct - доставка бизнес-ланчей в Москве. Мы привезем вам горячую вкусную еду в любую точку города к назначенному времени.</p>
+        <img src="images/lunch.jpg">
+    </section>
+
+        <!-- Секция "Преимущества" -->
+        <section id="lunch">
+            <h2>Преимущества Food Construct</h2>
+            <ul>
+                <li>Привозим обед к назначенному времени без опозданий</li>
+                <li>Надежно упаковываем блюда в удобные контейнеры бесплатно</li>
+                <li>Доставляем ланчи весь день с 7:00 до 23:00</li>
+            </ul>
+        </section>
+
+        <!-- Секция "Топ-5 популярных блюд" -->
+        <section id="orders">
+            <h2>Топ-5 популярных блюд</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Название</th>
+                        <th>Кол-во заказов в неделю</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Лазанья</td>
+                        <td>185</td>
+                        <td>385₽</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Том Ям с креветками</td>
+                        <td>161</td>
+                        <td>365₽</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Норвежский суп</td>
+                        <td>144</td>
+                        <td>270₽</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Жареная картошка с грибами</td>
+                        <td>132</td>
+                        <td>150₽</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Котлеты из курицы с картофельным пюре</td>
+                        <td>128</td>
+                        <td>225₽</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- ===== Футер ===== -->
+    <footer id="contacts">
+        <p>Позвонить нам:</p>
+        <a href="tel:+70000000000">+7-000-000-00-00</a>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь - Food Construct</title>
+    
+    <!-- Google Fonts (Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== Общие стили и сброс ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333333;
+            background-color: #f5f0e6;
+            line-height: 1.6;
+            font-size: 20px;
+        }
+
+        /* ===== Шапка (header) ===== */
+        header {
+            background-color: #ede4d3;
+            padding: 20px 40px;
+            margin: 0 auto;
+            max-width: 1200px;
+            border-bottom: 2px solid #d4c5b0;
+            border-radius: 0 0 8px 8px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #4a3520;
+            letter-spacing: -0.5px;
+            display: inline-block;
+            padding-bottom: 12px;
+            border-bottom: 4px solid #b85c38;
+        }
+
+        /* ===== Навигация (nav) ===== */
+        nav {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #5c4a35;
+            font-weight: 500;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            padding-bottom: 3px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: #b85c38;
+            border-bottom: 2px solid #b85c38;
+        }
+
+        /* ===== Основной контент ===== */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: #fbf7f0;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(74, 53, 32, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #4a3520;
+            letter-spacing: -0.3px;
+            display: inline-block;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #b85c38;
+        }
+
+        /* ===== Форма ===== */
+        .feedback-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            font-weight: 500;
+            color: #4a3520;
+            margin-bottom: 8px;
+        }
+
+        .form-group .form-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            font-weight: 500;
+            color: #4a3520;
+            margin-bottom: 10px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #333;
+            background-color: #ffffff;
+            border: 2px solid #d4c5b0;
+            border-radius: 8px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #b85c38;
+            box-shadow: 0 0 0 3px rgba(184, 92, 56, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        /* Радио-кнопки и чекбоксы */
+        .radio-label,
+        .checkbox-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #5c4a35;
+            font-weight: 400;
+            margin-right: 20px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            margin: 25px 0;
+        }
+
+        .checkbox-label {
+            margin-right: 0;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #b85c38;
+            cursor: pointer;
+        }
+
+        /* Кнопка отправки */
+        .submit-btn {
+            display: inline-block;
+            background-color: #b85c38;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #9a4a2c;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Поле загрузки файла */
+        input[type="file"] {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #5c4a35;
+            padding: 8px 0;
+        }
+
+        input[type="file"]::file-selector-button {
+            background-color: #ede4d3;
+            color: #4a3520;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background-color: #d4c5b0;
+        }
+
+        /* ===== Футер ===== */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 30px 40px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        footer a {
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f1c40f;
+        }
+
+        /* ===== Адаптивность ===== */
+        @media (max-width: 768px) {
+            header, main, footer {
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 25px 20px;
+            }
+
+            .form-group label,
+            .form-group .form-label {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Шапка ===== -->
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="index.html">О нас</a>
+            <a href="index.html#lunch">Собрать ланч</a>
+            <a href="index.html#orders">Заказы</a>
+            <a href="feedback.html">Обратная связь</a>
+            <a href="index.html#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- ===== Основное содержимое ===== -->
+    <main>
+        <section id="feedback">
+            <h2>Обратная связь</h2>
+
+            <form action="https://httpbin.org/post" method="POST" enctype="multipart/form-data" class="feedback-form">
+
+                <!-- ФИО -->
+                <div class="form-group">
+                    <label for="fullname">ФИО:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Иванов Иван Иванович" required>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+                </div>
+
+                <!-- Откуда узнали (радио) -->
+                <div class="form-group">
+                    <p class="form-label">Откуда узнали о нас:</p>
+                    <label class="radio-label">
+                        <input type="radio" name="source" value="advertising" checked> Реклама
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="source" value="friends"> Друзья
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="source" value="internet"> Интернет
+                    </label>
+                </div>
+
+                <!-- Тип обращения -->
+                <div class="form-group">
+                    <label for="type">Тип обращения:</label>
+                    <select id="type" name="type">
+                        <option value="complaint">Жалоба</option>
+                        <option value="suggestion" selected>Предложение</option>
+                    </select>
+                </div>
+
+                <!-- Текст сообщения -->
+                <div class="form-group">
+                    <label for="message">Текст сообщения:</label>
+                    <textarea id="message" name="message" placeholder="Напишите ваше сообщение..." required></textarea>
+                </div>
+
+                <!-- Вложения -->
+                <div class="form-group">
+                    <label for="attachment">Вложения:</label>
+                    <input type="file" id="attachment" name="attachment">
+                </div>
+
+                <!-- Согласие -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="agreement" required>
+                        Даю согласие на обработку персональных данных
+                    </label>
+                </div>
+
+                <!-- Кнопка -->
+                <button type="submit" class="submit-btn">Отправить</button>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- ===== Футер ===== -->
+    <footer id="contacts">
+        <p>Позвонить нам:</p>
+        <a href="tel:+70000000000">+7-000-000-00-00</a>
+    </footer>
+
+</body>
+</html>
