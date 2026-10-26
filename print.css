@@ -1,0 +1,70 @@
+@media print {
+    nav,
+    footer,
+    button,
+    .btn-login,
+    .dish-card button {
+        display: none;
+    }
+
+    body {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 14px;
+    }
+
+    header {
+        background-color: #ffffff;
+        border-bottom: 1px solid #000000;
+    }
+
+    h1, h2 {
+        color: #000000;
+        border-bottom: 1px solid #000000;
+    }
+
+    section {
+        box-shadow: none;
+        background-color: #ffffff;
+        padding: 10px 0;
+        margin-bottom: 20px;
+    }
+
+    .dish-card {
+        box-shadow: none;
+        filter: none;
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        page-break-inside: avoid;
+    }
+
+    .dishes-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    img {
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 6px 8px;
+        border: 1px solid #000000;
+    }
+
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 12px;
+    }
+}
